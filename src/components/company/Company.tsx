@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { Stepper } from '../stepper/Stepper';
 import steps from '../../consts/steps';
 import { State } from './../../types/state';
+import { validateCompanyCode, validateCompanyName } from './validation';
+import { useState } from 'react';
 
 type CompanyProps = {
     companyName: string;
@@ -23,8 +25,19 @@ const Company = ({
     setCountryOfRegistration,
 }: CompanyProps) => {
     const navigate = useNavigate();
+    const [companyNameValid, setCompanyNameValid] = useState(true);
+    const [companyCodeValid, setCompanyCodeValid] = useState(true);
+
     const onSubmit = () => {
-        navigate('/contact-person');
+        const isCompanyNameValid = validateCompanyName(companyName);
+        const isCompanyCodeValid = validateCompanyCode(companyCode);
+
+        setCompanyNameValid(isCompanyNameValid);
+        setCompanyCodeValid(isCompanyCodeValid);
+
+        const formValid = isCompanyNameValid && isCompanyCodeValid;
+
+        formValid && navigate('/contact-person');
     };
 
     return (
@@ -37,19 +50,27 @@ const Company = ({
                     <h3>Company</h3>
                     <div className='company-form'>
                         <input
-                            className='company-form__input'
+                            className={companyNameValid ? 'company-form__input' : 'company-form__input-error'}
                             placeholder='Company name'
                             value={companyName}
                             onChange={(e) => setCompanyName(e.target.value)}
                             data-testid='company-name-input'
                         />
 
+                        <label className='company-form__text-error' hidden={companyNameValid}>
+                            Please provide correct company name.
+                        </label>
+
                         <input
-                            className='company-form__input'
+                            className={companyCodeValid ? 'company-form__input' : 'company-form__input-error'}
                             placeholder='Company code'
                             value={companyCode}
                             onChange={(e) => setCompanyCode(e.target.value)}
                         />
+
+                        <label className='company-form__text-error' hidden={companyCodeValid}>
+                            Please provide correct company code.
+                        </label>
 
                         <div className='company-form__select-wraper'>
                             <select

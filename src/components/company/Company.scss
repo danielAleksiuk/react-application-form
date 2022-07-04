@@ -24,6 +24,21 @@
             padding-left: 10px;
         }
 
+        &__input-error {
+            height: 50px;
+            border: 1px solid #FF7064;;
+            border-radius: 8px;
+            margin: 10px 0;
+            padding-left: 10px;
+        }
+
+        &__text-error {
+            font-size: x-small;
+            color: #FF7064;
+            margin: 0px 0 0 10px;
+            font-weight: 600;
+        }
+
         &__select-wraper {
             width: 100%;
             margin: 10px 10px 10px 0;
