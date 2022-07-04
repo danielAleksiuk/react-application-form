@@ -1,3 +1,34 @@
+## This task has been done by Daniel Aleksiuk
+
+### Commands to run scripts:
+- `npm install` - to install all packages
+- `npm start` - to run in dev env 
+- `npm build` - to build prod env
+- `npm test` - to run  tests
+
+### What did/used in this solution
+- used 'Creare-react-app' tool
+- used typescript
+- used react
+- used react hooks
+- user react redux
+- used react routing
+- used scss
+- used BEM methology
+- implemented responsive design
+- added basic validation
+- added tests
+- not used any extra external UI libraries
+
+### Ideas for future development:
+- implement more 'pixel' friendly design
+- implement more tests 
+- instead of using create react app, use webpack for prod/dev/staging env builds
+- refactor all css
+- implement validation to all components
+- refactor react components structure ( for example to develop more low level components)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
