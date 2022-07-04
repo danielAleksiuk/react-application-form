@@ -47,7 +47,7 @@ const Company = ({
             </div>
             <div className='company'>
                 <div className='container'>
-                    <h3>Company</h3>
+                    <h3 data-testid="company-name">Company</h3>
                     <div className='company-form'>
                         <input
                             className={companyNameValid ? 'company-form__input' : 'company-form__input-error'}
