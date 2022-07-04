@@ -84,3 +84,15 @@
         }
     }
 }
+
+@media screen and (max-width: 950px) {
+    .company {
+        position: unset;
+        top: 0;
+        left: 0;
+
+        .container {
+            width: unset;
+        }
+    }
+}

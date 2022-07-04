@@ -35,3 +35,11 @@
         }
     }
 }
+
+@media screen and (max-width: 950px) {
+    .stepper-container {
+        position: sticky;
+        top: 0;
+        left: 30%;
+    }
+}

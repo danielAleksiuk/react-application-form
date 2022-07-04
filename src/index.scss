@@ -28,3 +28,10 @@ select {
     top: 30%;
     left: 0;
 }
+
+@media screen and (max-width: 950px) {
+    .stepper {
+        position: unset;
+        top: 0;
+    }
+}
